@@ -1,4 +1,5 @@
 [app]
+version.regex = __version__ = ['"](.*)['"]
 # اسم التطبيق
 title = BavlyApp
 
