@@ -1,0 +1,6 @@
+kivy
+kivy_garden
+qrcode
+opencv-python
+pyzbar
+pandas
