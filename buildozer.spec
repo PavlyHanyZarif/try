@@ -1,37 +1,31 @@
 [app]
-version.regex = __version__ = ['"](.*)['"]
-# اسم التطبيق
-title = BavlyApp
-
-# اسم الحزمة (يُفضل أن يكون بصيغة معكوسة للنطاق مثل com.example.bavlyapp)
-package.name = bavlyapp
+title = MyApp
+package.name = myapp
 package.domain = org.example
-
-# مسار الكود الرئيسي
 source.dir = .
-
-# ملف البداية الرئيسي
-source.include_exts = py,png,jpg,kv,atlas
-
-# الأيقونة (يمكنك تعديل المسار إلى أيقونة مخصصة)
-icon.filename = icon.png
-
-# المسموح لهم باستخدام التطبيق
-orientation = portrait
-
-# المكتبات المطلوبة
-requirements = python3,kivy,kivy_garden,sqlite3,qrcode,opencv,pyzbar,pandas
-
-# الصلاحيات المطلوبة
-android.permissions = INTERNET, CAMERA
-
-# إخفاء وحدة التحكم
-fullscreen = 0
-
-# اسم الـ APK النهائي
-android.archs = arm64-v8a, armeabi-v7a
-android.release = 0
+version = 1.0.0
+version.filename = main.py
+version.regex = __version__ = ['"](.*)['"]
 
 [buildozer]
 log_level = 2
-warn_on_root = 1
+
+[requirements]
+python3, kivy
+
+[android]
+# Permissions
+android.permissions = INTERNET, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
+
+# Build options
+android.api = 31
+android.ndk = 23b
+android.arch = arm64-v8a, armeabi-v7a
+android.minapi = 21
+
+# Fixes common issues with SDL2
+android.requirements = python3, kivy, sdl2_ttf, sdl2_image, sdl2_mixer, sdl2_net
+android.ndk_path = /home/user/android-ndk-r23b
+
+# App icon (replace with your icon path)
+icon.filename = icon.png
